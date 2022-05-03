@@ -1,17 +1,11 @@
 @import url(/shared/styles/base.css);
 @import url(/shared/components/custom-list.css);
 @import url(/shared/components/custom-list-item.css);
-
-summary {
-  cursor: pointer;
-}
-
-summary::marker {
-  content: none;
-}
+@import url(/shared/components/article-list-item.css);
 
 a.back {
   display: none;
+  padding-top: 2em;
 }
 
 @media (max-width: 710px) {
@@ -29,7 +23,5 @@ a.back {
 
   a.back {
     display: block;
-    padding-top: 2em;
   }
 }
-
