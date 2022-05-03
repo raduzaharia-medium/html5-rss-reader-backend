@@ -1,13 +1,19 @@
 import { CustomList } from "../shared/components/custom-list.js";
-import { CustomListItem } from "../shared/components/custom-list-item.js";
+import { FeedListItem } from "../shared/components/feed-list-item.js";
+import { ArticleListItem } from "../shared/components/article-list-item.js";
 
-document
-  .getElementById("feeds")
-  .setItems(["The Verge", "Ars Technica", "Hacker News"]);
+document.getElementById("feeds").setItems([
+  { name: "The Verge", address: "https://www.theverge.com/rss/index.xml" },
+  { name: "Ars Technica", address: "https://feeds.arstechnica.com/arstechnica/features" },
+  { name: "Hacker News", address: "https://news.ycombinator.com/rss" },
+]);
 
-document
-  .getElementById("articles")
-  .setItems(["Article1", "Article2", "Article3", "Article4"]);
+document.getElementById("articles").setItems([
+  { title: "Article1", summary: "Something" },
+  { title: "Article2", summary: "Another thing" },
+  { title: "Article3", summary: "Whatever" },
+  { title: "Article4", summary: "Yet another one" },
+]);
 
 document.getElementById("feeds").addEventListener("click", (e) => {
   document.body.classList.add("feed-selected");
