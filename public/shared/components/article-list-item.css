@@ -1,0 +1,9 @@
+@import url(./custom-list-item.css);
+
+li.article-list-item summary {
+  cursor: pointer;
+}
+
+li.article-list-item summary::marker {
+  content: none;
+}
