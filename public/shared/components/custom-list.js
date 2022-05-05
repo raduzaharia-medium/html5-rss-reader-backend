@@ -34,8 +34,7 @@ export class CustomList extends HTMLUListElement {
   }
   clearItems() {
     this.value = "";
-    for (const element of this.querySelectorAll("li.custom-list-item"))
-      element.remove();
+    for (const element of this.querySelectorAll("li.custom-list-item")) element.remove();
   }
 
   selectFirst() {
@@ -43,14 +42,19 @@ export class CustomList extends HTMLUListElement {
     if (selection) this.value = selection.dataItem;
   }
   select(dataItem) {
-    const selection = this.querySelector(
-      `li.custom-list-item[data-item="${dataItem}"]`
-    );
+    const selection = this.querySelector(`li.custom-list-item[data-item="${dataItem}"]`);
     if (selection) this.value = selection.dataItem;
   }
   clearSelection() {
     this.querySelectorAll("li.custom-list-item").forEach((element) => {
       element.deselect();
+    });
+  }
+
+  filter(word) {
+    this.querySelectorAll("li.custom-list-item").forEach((element) => {
+      if (element.dataItemContains(word)) element.show();
+      else element.hide();
     });
   }
 
