@@ -15,6 +15,10 @@ document.getElementById("articles").setItems([
   { title: "Article4", summary: "Yet another one" },
 ]);
 
+document.getElementById("feedFilter").addEventListener("input", (e) => {
+  document.getElementById("feeds").filter(e.target.value);
+});
+
 document.getElementById("feeds").addEventListener("click", (e) => {
   document.body.classList.add("feed-selected");
 
