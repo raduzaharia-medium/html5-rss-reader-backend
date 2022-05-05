@@ -9,3 +9,7 @@ li.custom-list-item {
 li.custom-list-item.selected {
   text-shadow: var(--selection-shadow);
 }
+
+li.custom-list-item.hidden {
+  display: none !important;
+}
