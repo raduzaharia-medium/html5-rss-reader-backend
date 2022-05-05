@@ -25,6 +25,20 @@ export class CustomListItem extends HTMLLIElement {
   isSelected() {
     return this.classList.contains("selected");
   }
+
+  hide() {
+    this.classList.add("hidden");
+  }
+  show() {
+    this.classList.remove("hidden");
+  }
+  isHidden() {
+    return this.classList.contains("hidden");
+  }
+
+  dataItemContains(word) {
+    return this.dataItem.toLowerCase().indexOf(word.toLowerCase()) !== -1;
+  }
 }
 
 customElements.define("custom-list-item", CustomListItem, { extends: "li" });
